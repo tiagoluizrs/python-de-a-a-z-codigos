@@ -1,0 +1,13 @@
+[project]
+name = "cap-19-cpython-por-dentro"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: cap-19-cpython-por-dentro"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]

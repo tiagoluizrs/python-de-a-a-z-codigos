@@ -1,0 +1,13 @@
+[project]
+name = "cap-27-null-object"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: cap-27-null-object"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]

@@ -1,0 +1,13 @@
+# docker compose up -d
+#   Redis na porta 56379; MongoDB (conjunto de réplicas de um nó, necessário para transações) na 57017.
+# Depois da primeira subida: docker compose exec mongo mongosh --eval 'rs.initiate({_id:"rs0",members:[{_id:0,host:"localhost:27017"}]})'
+services:
+  redis:
+    image: redis:8-alpine
+    ports:
+      - "56379:6379"
+  mongo:
+    image: mongo:8
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    ports:
+      - "57017:27017"

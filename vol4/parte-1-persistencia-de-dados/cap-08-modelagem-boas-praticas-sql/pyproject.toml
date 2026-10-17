@@ -1,0 +1,14 @@
+[project]
+name = "cap-08-modelagem-boas-praticas-sql"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: modelagem e boas práticas de SQL"
+requires-python = ">=3.15"
+dependencies = ["psycopg[binary]>=3.3"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

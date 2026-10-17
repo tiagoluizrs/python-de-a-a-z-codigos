@@ -1,0 +1,21 @@
+[project]
+name = "cap-14-automacao-web"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: automação web"
+requires-python = ">=3.15"
+dependencies = [
+    "httpx",
+    "beautifulsoup4",
+    "lxml",
+    "selectolax",
+    "playwright",
+    "pydantic>=2.14.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

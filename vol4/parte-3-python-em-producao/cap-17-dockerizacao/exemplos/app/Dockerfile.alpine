@@ -1,0 +1,7 @@
+# A mesma imagem enxuta, sobre Alpine (musl). Menor, mas nem sempre melhor.
+FROM python:3.15-alpine
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY src ./src
+RUN pip install --no-cache-dir .
+CMD ["python", "-m", "shop_api.server"]

@@ -1,0 +1,33 @@
+# O serviço e o Redis, com saúde e ordem de partida.
+#   docker compose up -d --build --wait     |    docker compose down -v
+services:
+  redis:
+    image: redis:8-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+    # sem `ports:`: só o serviço (na rede interna do compose) enxerga o Redis
+
+  api:
+    build:
+      context: ./app
+    environment:
+      APP_ENV: staging
+      REDIS_URL: redis://redis:6379/0          # o nome do serviço vira o nome do host na rede do compose
+    ports:
+      - "127.0.0.1::8000"                       # porta livre no host, só no loopback
+    depends_on:
+      redis:
+        condition: service_healthy              # só inicia depois que o Redis responde
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: [/tmp]
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+          cpus: "1.0"

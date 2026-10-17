@@ -1,0 +1,14 @@
+[project]
+name = "cap-04-bancos-enterprise"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: bancos corporativos (Oracle e SQL Server)"
+requires-python = ">=3.15"
+dependencies = ["oracledb>=3", "mssql-python>=1.16", "pymssql", "psycopg[binary]>=3.3", "pymysql", "cryptography"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

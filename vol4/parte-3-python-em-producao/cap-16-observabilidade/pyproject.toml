@@ -1,0 +1,14 @@
+[project]
+name = "cap-16-observabilidade"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: observabilidade"
+requires-python = ">=3.15"
+dependencies = ["prometheus-client", "opentelemetry-api", "opentelemetry-sdk", "opentelemetry-exporter-otlp-proto-http", "httpx", "structlog", "pydantic"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

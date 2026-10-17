@@ -1,0 +1,14 @@
+[project]
+name = "cap-10-pydantic"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: validação de dados com Pydantic"
+requires-python = ">=3.15"
+dependencies = ["pydantic>=2.12", "pydantic-settings", "email-validator", "httpx", "sqlalchemy>=2.1", "msgspec", "attrs"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

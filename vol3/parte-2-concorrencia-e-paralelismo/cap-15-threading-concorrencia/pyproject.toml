@@ -1,0 +1,13 @@
+[project]
+name = "cap-15-threading-concorrencia"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: threads e concorrência"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8", "uv"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]

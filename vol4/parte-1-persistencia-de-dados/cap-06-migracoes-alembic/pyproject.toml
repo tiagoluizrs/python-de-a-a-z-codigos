@@ -1,0 +1,14 @@
+[project]
+name = "cap-06-migracoes-alembic"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: migrações com Alembic"
+requires-python = ">=3.15"
+dependencies = ["alembic>=1.20", "sqlalchemy>=2.1", "psycopg[binary]>=3.3", "pymysql", "cryptography", "oracledb>=3", "mssql-python>=1.16"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

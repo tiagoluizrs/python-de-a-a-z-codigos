@@ -1,0 +1,21 @@
+[project]
+name = "cap-15-cli-tools"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: ferramentas de linha de comando"
+requires-python = ">=3.15"
+dependencies = [
+    "typer",
+    "click",
+    "rich",
+    "rich-click",
+    "textual",
+    "pandas>=3.0.6",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

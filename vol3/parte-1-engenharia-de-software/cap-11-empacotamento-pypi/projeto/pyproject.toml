@@ -1,0 +1,33 @@
+[project]
+name = "greeter-demo"
+version = "0.3.0"
+description = "Pacote de exemplo para o capítulo de empacotamento"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Autor do livro", email = "autor@example.com" }]
+keywords = ["exemplo", "livro"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dependencies = ["rich>=13"]
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6"]
+
+[project.urls]
+Homepage = "https://example.com/greeter"
+Changelog = "https://example.com/greeter/changelog"
+
+[project.scripts]
+greeter = "greeter.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "greeter"

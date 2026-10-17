@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 2s          # curto de propósito, para ver os dados rápido (em produção: 15s a 60s)
+  evaluation_interval: 2s
+rule_files:
+  - /etc/prometheus/alerts.yml
+scrape_configs:
+  - job_name: shop
+    static_configs:
+      - targets: ["host.docker.internal:8000"]

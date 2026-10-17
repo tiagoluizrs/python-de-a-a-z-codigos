@@ -1,0 +1,12 @@
+# Prometheus local que lê o /metrics do exemplo (python exemplos/shop_stack.py --serve).
+# Uso:  docker compose up -d   |   abra http://localhost:59090   |   docker compose down
+services:
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    ports:
+      - "59090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./alerts.yml:/etc/prometheus/alerts.yml:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"     # no Linux, alcança o processo que roda na sua máquina

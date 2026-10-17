@@ -1,0 +1,15 @@
+[project]
+name = "cap-04-testes-automatizados"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: testes automatizados com pytest"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8", "coverage>=7", "hypothesis>=6"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]
+markers = ["slow: testes lentos (desligue com -m 'not slow')"]

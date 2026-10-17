@@ -1,0 +1,3 @@
+# Os exemplos de portabilidade usam os bancos dos Capítulos 54 a 56 (todos opcionais):
+#   PostgreSQL 55432, MySQL 53306, MariaDB 53307, Oracle 51521, SQL Server 51433.
+# Sem eles, os exemplos usam só o SQLite e os testes entre bancos pulam o que não responder.

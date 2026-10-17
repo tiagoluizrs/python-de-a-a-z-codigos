@@ -1,0 +1,8 @@
+name: python-de-a-a-z
+channels:
+  - conda-forge
+dependencies:
+  - python=3.15
+  - pip
+  - pip:
+      - requests

@@ -1,0 +1,24 @@
+[project]
+name = "cap-01-estrutura-projetos"
+version = "0.1.0"
+description = "Projeto-exemplo do capítulo 1: um pacote com layout src, CLI e testes"
+readme = "README.md"
+requires-python = ">=3.15"
+dependencies = []
+
+[project.scripts]
+inventory = "inventory.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "inventory"
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]

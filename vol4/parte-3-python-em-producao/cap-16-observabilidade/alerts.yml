@@ -1,0 +1,8 @@
+groups:
+  - name: shop
+    rules:
+      - alert: HighErrorRatio
+        expr: sum(rate(shop_requests_total{status=~"5.."}[30s])) / sum(rate(shop_requests_total[30s])) > 0.01
+        for: 10s
+        labels: {severity: page}
+        annotations: {summary: "Mais de 1% de erros 5xx"}

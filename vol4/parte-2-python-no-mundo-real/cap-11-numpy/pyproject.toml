@@ -1,0 +1,14 @@
+[project]
+name = "cap-11-numpy"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: NumPy"
+requires-python = ">=3.15"
+dependencies = ["numpy>=2.4"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

@@ -1,0 +1,16 @@
+# docker compose up -d   (Oracle Free na 51521, SQL Server na 51433; levam ~1 min para ficar prontos)
+# Para os testes entre bancos, suba também os dos Capítulos 54 e 55 (PostgreSQL na 55432, MySQL na 53306).
+services:
+  oracle:
+    image: gvenzl/oracle-free:slim-faststart
+    environment:
+      ORACLE_PASSWORD: oracle
+    ports:
+      - "51521:1521"
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Livro_12345
+    ports:
+      - "51433:1433"

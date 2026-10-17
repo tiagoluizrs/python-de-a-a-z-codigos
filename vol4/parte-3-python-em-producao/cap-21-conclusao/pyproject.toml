@@ -1,0 +1,14 @@
+[project]
+name = "cap-21-conclusao"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: conclusão (prontidão para produção)"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

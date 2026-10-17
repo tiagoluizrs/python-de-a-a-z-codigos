@@ -1,0 +1,16 @@
+# docker compose up -d   (MySQL 8.0 na porta 53306 e MariaDB 11 na 53307)
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: livro
+    ports:
+      - "53306:3306"
+  mariadb:
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: livro
+    ports:
+      - "53307:3306"

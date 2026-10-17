@@ -1,0 +1,10 @@
+# Os exemplos de PostgreSQL usam o mesmo contêiner do Capítulo 54 (porta 55432):
+#   docker run -d --name livro-pg -e POSTGRES_PASSWORD=postgres -p 55432:5432 postgres:18-alpine
+# Os exercícios e os testes usam só o SQLite: não precisam de servidor.
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "55432:5432"

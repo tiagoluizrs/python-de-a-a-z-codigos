@@ -1,0 +1,18 @@
+[project]
+name = "cap-06-tipagem-estatica"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: tipagem estática"
+requires-python = ">=3.15"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8", "mypy>=2", "pyright", "ty", "pyrefly"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.15"
+strict = true
+exclude = ["exemplos/errors_demo.py", "exemplos/new315_demo.py", "exercicios", "gabaritos"]

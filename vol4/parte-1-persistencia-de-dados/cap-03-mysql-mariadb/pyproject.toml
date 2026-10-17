@@ -1,0 +1,14 @@
+[project]
+name = "cap-03-mysql-mariadb"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: MySQL e MariaDB"
+requires-python = ">=3.15"
+dependencies = ["pymysql>=1.1", "cryptography", "mysql-connector-python", "aiomysql"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

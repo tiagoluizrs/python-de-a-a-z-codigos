@@ -1,0 +1,14 @@
+[project]
+name = "cap-02-postgresql"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: PostgreSQL com psycopg 3"
+requires-python = ">=3.15"
+dependencies = ["psycopg[binary]>=3.3", "psycopg-pool>=3.3"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]

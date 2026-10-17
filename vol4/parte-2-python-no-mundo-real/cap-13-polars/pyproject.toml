@@ -1,0 +1,14 @@
+[project]
+name = "cap-13-polars"
+version = "0.1.0"
+description = "Exemplos e exercícios do capítulo: Polars"
+requires-python = ">=3.15"
+dependencies = ["polars", "numpy", "pyarrow", "pandas", "matplotlib", "plotly"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
+pythonpath = ["exemplos"]
